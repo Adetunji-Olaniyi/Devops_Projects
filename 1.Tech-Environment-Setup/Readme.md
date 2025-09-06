@@ -1,17 +1,19 @@
 TECH ENVIRONMENT SETUP
 
 1. Vs Code
-![Vs Code](./img/1.VsCode.png)
+![Vs Code](./img/1.VsCode%20-1.png)
 
 2. Git
 ![Git](./img/2.GitVersion.png)
 
 3. Ubuntu on Virtual Box
 
-![Ubuntu](./img/3.Ubuntu.png)
+![Ubuntu](./img/Ubuntu.%201.png)
+
 
 4.  Virtual Box
-! [Virtual Box](./img/4.VirtualBox1.png)
+![Virtual Box](./img/4.VirtualBox1.png)
+
 
 5. Git Hub
 ![Git Hub](./img/5.GitHub.png)
