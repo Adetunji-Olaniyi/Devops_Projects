@@ -1,193 +1,281 @@
-Working with Docker Images
-Introduction to Docker Images
-Docker images are the building blocks of containers. They are lightweight, portable, and self-sufficient packages that contain everything needed to run a software application, including the code, runtime, libraries, and system tools. Images are created from a set of instructions known as a Dockerfile, which specifies the environment and configuration for the application.
+Introduction to Docker and Containers
+What are Containers?
+In realm of software development and deployment, professionals used to face a dilemma. They crafted brilliant code on their local machines, only to find that when deployed to other environments, it sometimes does not work. The culprit? The notorious "it works on my machine" phenomenon.
 
-Pulling Images from Docker Hub
-Docker Hub (https://hub.docker.com/) is a cloud-based registry that hosts a vast collection of Docker images. We can pull images from Docker Hub to our local machine using the docker pull command.
+Docker
 
-To explore available images on Docker Hub, the docker command provides a search subcommand. For instance, to find the Ubuntu image, you can execute:
+Get started with Docker, a tool that emerged to a major problem IT industry. A man named Solomon Hykes, who, in 2013, unveiled Docker, a containerisation platform that promised to revolutionize the way IT professionals built, shipped, and ran applications.
 
-docker search ubuntu
+Imagine containers as magical vessels that encapsulate everything an application needs to run smoothly – its code, libraries, dependencies, and even a dash of configuration magic. These containers ensure that an application remains consistent and behaves the same, whether it's running on a developer's laptop, a testing server, or a live production environment. Docker had bestowed upon IT professionals the power to say goodbye to the days of "it works on my machine."
 
-This command allows us to discover and explore various images hosted on Docker Hub by providing relevant search results. In this case, the output will be similar to this:
+DockerGif
 
-DockerHubonTheWeb
+As a learner, find yourself at the crossroads of this digital fairytale. Why, you may wonder, should you embark on this journey into the world of Docker? Fear not, for the answer lies in the immense benefits that Docker bestows upon its disciples. Moreover, Docker simplifies the deployment process, making it as easy as waving a wand. Gone are the days of wrestling with complex installation procedures and compatibility issues. Docker containers provide a standardized, portable environment, ensuring that your applications run seamlessly across various platforms.
 
-DockerSeaerchDesktop
+So, as you embark on this adventure into Docker, envision yourself as a modern-day sorcerer, wielding the power to conjure applications that dance gracefully from development to deployment.
 
-DockerSearchOnCLI
+Advantages of Containers
+Portability Across Different Environments: In the past, deploying applications was akin to navigating a treacherous maze, with compatibility issues lurking at every turn. Docker's containers, however, encapsulate the entire application along with its dependencies and configurations. This magical package ensures that your creation dances gracefully across different platforms, sparing you from the woes of the "it works on my machine" curse. With Docker, bid farewell to the headaches of environment mismatches and embrace a world where your application reigns supreme, irrespective of its hosting kingdom.
 
-In the "OFFICIAL" column, the "OK" designation signifies that an image has been constructed and is officially supported by the organization responsible for the project. Once we have identified the desired image, we can retrieve it to our local machine using the "pull" subcommand.
+Resource Efficiency Compared to Virtual Machines: Docker containers share the underlying host's operating system kernel, making them lightweight and nimble. This efficiency allows you to run multiple containers on a single host without the extravagant resource demands of traditional virtual machines. Picture Docker containers as magical carriages, swiftly transporting your applications without burdening the kingdom with unnecessary excess. With Docker, revel in the harmony of resource optimization and application efficiency.
 
-To download the official Ubuntu image to our computer, use the following command:
+Rapid Application Deployment and Scaling: Docker containers can be effortlessly spun up or torn down, facilitating the swift deployment of applications. Whether you're facing a sudden surge in demand or orchestrating a grand-scale production, Docker allows you to scale your applications seamlessly. Imagine commanding an army of containers to conquer the peaks of user demand, only to gracefully retreat when the storm has passed. With Docker, the ability to scale becomes a wand in your hand, transforming the challenges of deployment into a choreographed ballet of efficiency.
 
-docker pull ubuntu
+Comparison of Docker Container with Virtual Machines
+Docker and virtual machines (VMs) are both technologies used for application deployment, but they differ in their approach to virtualization. Virtual machines emulate entire operating systems, resulting in higher resource overhead and slower performance. In contrast, Docker utilizes containerization, encapsulating applications and their dependencies while sharing the host OS's kernel. This lightweight approach reduces resource consumption, provides faster startup times, and ensures portability across different environments. Docker's emphasis on microservices and standardized packaging fosters scalability and efficiency, making it a preferred choice for modern, agile application development, whereas virtual machines excel in scenarios requiring stronger isolation but at the cost of increased resource usage. The choice between Docker and VMs depends on specific use cases and the desired balance between performance and isolation.
 
-Executing this command will fetch the official Ubuntu image from Docker Hub and store it locally on our machine, making it ready for use in creating containers.
+Importance of Docker
+Technology and Industry Impact: The significance of Docker in the technology landscape cannot be overstated. Docker and containerization have revolutionized software development, deployment, and management. The ability to package applications and their dependencies into lightweight, portable containers addresses key challenges in software development, such as consistency across different environments and efficient resource utilization.
 
-DockerPullUbuntu
+Real-World Impact: Implementing Docker brings tangible benefits to organizations. It streamlines the development process, promotes collaboration between development and operations teams, and accelerates the delivery of applications. Docker's containerization technology enhances scalability, facilitates rapid deployment, and ensures the consistency of applications across diverse environments. This not only saves time and resources but also contributes to a more resilient and agile software development lifecycle.
 
-Once an image has been successfully downloaded, you can proceed to run a container using that downloaded image by employing the "run" subcommand. Similar to the hello-world example, if an image is not present locally when the docker run subcommand is invoked, Docker will automatically download the required image before initiating the container.
+Target Audience
+This course on Docker is designed for a diverse audience, including:
 
-docker run ubuntu
+DevOps Professionals: Interested in container orchestration, seeking efficient ways to manage and deploy applications, improve resource utilization, and ensure system stability.
 
-DockerRunUbuntu
+Developers: Who want to streamline their application development, enhance collaboration, and ensure consistency across different stages of the development lifecycle.
 
-To view the list of images that have been downloaded and are available on your local machine, enter the following command:
+It caters to cloud engineers, QA engineers, and other tech enthusiast who are eager to enhance their technical skills and establish a strong foundation in docker and containersation. Professionals seeking to expand their skill set or students preparing for roles in technology-related fields will find this project beneficial.
+
+Prerequisites
+Before diving into this Docker course, learners
+
+Should be comfortable navigating linux and executing its commands.
+
+Should have basic cloud computing knowledge.
+
+Understanding of virtual machines and their role in software deployment.
+
+Introduction to Docker and Containers What are Containers? In realm of software development and deployment, professionals used to face a dilemma. They crafted brilliant code on their local machines, only to find that when deployed to other environments, it sometimes does not work. The culprit? The notorious "it works on my machine" phenomenon.
+
+Docker
+
+Get started with Docker, a tool that emerged to a major problem IT industry. A man named Solomon Hykes, who, in 2013, unveiled Docker, a containerisation platform that promised to revolutionize the way IT professionals built, shipped, and ran applications.
+
+Imagine containers as magical vessels that encapsulate everything an application needs to run smoothly – its code, libraries, dependencies, and even a dash of configuration magic. These containers ensure that an application remains consistent and behaves the same, whether it's running on a developer's laptop, a testing server, or a live production environment. Docker had bestowed upon IT professionals the power to say goodbye to the days of "it works on my machine."
+
+Docker GIF
+
+As a learner, find yourself at the crossroads of this digital fairytale. Why, you may wonder, should you embark on this journey into the world of Docker? Fear not, for the answer lies in the immense benefits that Docker bestows upon its disciples. Moreover, Docker simplifies the deployment process, making it as easy as waving a wand. Gone are the days of wrestling with complex installation procedures and compatibility issues. Docker containers provide a standardized, portable environment, ensuring that your applications run seamlessly across various platforms.
+
+So, as you embark on this adventure into Docker, envision yourself as a modern-day sorcerer, wielding the power to conjure applications that dance gracefully from development to deployment.
+
+Advantages of Containers Portability Across Different Environments: In the past, deploying applications was akin to navigating a treacherous maze, with compatibility issues lurking at every turn. Docker's containers, however, encapsulate the entire application along with its dependencies and configurations. This magical package ensures that your creation dances gracefully across different platforms, sparing you from the woes of the "it works on my machine" curse. With Docker, bid farewell to the headaches of environment mismatches and embrace a world where your application reigns supreme, irrespective of its hosting kingdom.
+
+Resource Efficiency Compared to Virtual Machines: Docker containers share the underlying host's operating system kernel, making them lightweight and nimble. This efficiency allows you to run multiple containers on a single host without the extravagant resource demands of traditional virtual machines. Picture Docker containers as magical carriages, swiftly transporting your applications without burdening the kingdom with unnecessary excess. With Docker, revel in the harmony of resource optimization and application efficiency.
+
+Rapid Application Deployment and Scaling: Docker containers can be effortlessly spun up or torn down, facilitating the swift deployment of applications. Whether you're facing a sudden surge in demand or orchestrating a grand-scale production, Docker allows you to scale your applications seamlessly. Imagine commanding an army of containers to conquer the peaks of user demand, only to gracefully retreat when the storm has passed. With Docker, the ability to scale becomes a wand in your hand, transforming the challenges of deployment into a choreographed ballet of efficiency.
+
+Comparison of Docker Container with Virtual Machines Docker and virtual machines (VMs) are both technologies used for application deployment, but they differ in their approach to virtualization. Virtual machines emulate entire operating systems, resulting in higher resource overhead and slower performance. In contrast, Docker utilizes containerization, encapsulating applications and their dependencies while sharing the host OS's kernel. This lightweight approach reduces resource consumption, provides faster startup times, and ensures portability across different environments. Docker's emphasis on microservices and standardized packaging fosters scalability and efficiency, making it a preferred choice for modern, agile application development, whereas virtual machines excel in scenarios requiring stronger isolation but at the cost of increased resource usage. The choice between Docker and VMs depends on specific use cases and the desired balance between performance and isolation.
+
+Importance of Docker Technology and Industry Impact: The significance of Docker in the technology landscape cannot be overstated. Docker and containerization have revolutionized software development, deployment, and management. The ability to package applications and their dependencies into lightweight, portable containers addresses key challenges in software development, such as consistency across different environments and efficient resource utilization.
+
+Real-World Impact: Implementing Docker brings tangible benefits to organizations. It streamlines the development process, promotes collaboration between development and operations teams, and accelerates the delivery of applications. Docker's containerization technology enhances scalability, facilitates rapid deployment, and ensures the consistency of applications across diverse environments. This not only saves time and resources but also contributes to a more resilient and agile software development lifecycle.
+
+Target Audience This course on Docker is designed for a diverse audience, including:
+
+DevOps Professionals: Interested in container orchestration, seeking efficient ways to manage and deploy applications, improve resource utilization, and ensure system stability.
+
+Developers: Who want to streamline their application development, enhance collaboration, and ensure consistency across different stages of the development lifecycle.
+
+It caters to cloud engineers, QA engineers, and other tech enthusiast who are eager to enhance their technical skills and establish a strong foundation in docker and containersation. Professionals seeking to expand their skill set or students preparing for roles in technology-related fields will find this project beneficial.
+
+Prerequisites Before diving into this Docker course, learners
+
+Should have successfully completed our TechOps Career Essentials and Advanced TechOps course.
+
+Should be comfortable navigating linux and executing its commands.
+
+Should have basic cloud computing knowledge.
+
+Understanding of virtual machines and their role in software deployment.
+
+Project Goals
+By the end of this course, learners should aim to achieve the following:
+
+Grasp the concept of containers, their isolation, and their role in packaging applications.
+
+Familiarize themselves with key Docker features, commands, and best practices.
+
+Comprehend how Docker containers contribute to resource efficiency compared to traditional virtual machines.
+
+Learn how Docker ensures consistent application behavior across different development, testing, and production environments.
+
+Master the techniques for quickly deploying and scaling applications using Docker.
+
+Getting Started With Docker
+Installing Docker
+We need to launch an ubuntu 20.04 LTS instance and connect to it, then follow the steps below
+
+Launch ubuntu 20.04 LTS on AWS and login to the instance:
+
+SSHConnectiontotheServer
+
+Before installing Docker Engine for the first time on a new host machine, it is necessary to configure the Docker repository. Following this setup, we can proceed to install and update Docker directly from the repository.
+
+Now let's first add docker's oficial GPG key: https://help.ubuntu.com/community/GnuPrivacyGuardHowto
+
+sudo apt-get update
+
+SudoUpdate UpdateCompleted
+
+This is a Linux command that refreshes the package list on a Debian-based system, ensuring the latest software information is available for installation.
+
+sudo apt-get install ca-certificates curl gnupg
+
+GetInstall
+
+This a Linux command that installs essential packages including certificate authorities, a data transfer tool (curl), and the GNU Privacy Guard for secure communication and package verification.
+
+sudo install -m 0755 -d /etc/apt/keyrings
+
+CreateDirectory
+
+The command above creates a directory (/etc/apt/keyrings) with specific permissions (0755) for storing keyring files, which are used for docker's authentication.
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+downloadDocker
+
+This downloads the Docker GPG key using curl
+
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+GivePermission
+
+Sets read permissions for all users on the Docker GPG key file within the APT keyring directory
+
+Let's add the repository to Apt sources
+echo \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \ $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+AptSource
+
+The "echo" command creates a Docker APT repository configuration entry for the Ubuntu system, incorporating the system architecture and Docker GPG key, and then "sudo tee /etc/apt/sources.list.d/docker.list > /dev/null" writes this configuration to the "/etc/apt/sources.list.d/docker.list" file.
+
+sudo apt-get update
+
+GetUpdate
+
+Install latest version of docker
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+InstallDocker
+
+Verify that docker has been successfully installed
+
+DockerStatus
+
+By default, after installing docker, it can only be run by root user or using sudo command. To run the docker command without sudo execute the command below.
+
+sudo usermod -aG docker ubuntu
+
+DockerUserMode
+
+After executing the command above, we can run docker command without using superuser privilledges
+
+Running the "Hello World" Container
+Using the docker run Command
+The docker run command is the entry point to execute containers in Docker. It allows us to create and start a container based on a specified Docker image. The most straightforward example is the "Hello World" container, a minimalistic container that prints a greeting message when executed.
+
+Run the "Hello World" container
+docker run hello-world
+
+Docker_Run
+
+When we execute this command, Docker performs the following steps:
+
+Pulls Image (if not available locally): Docker checks if the hello-world image is available locally. If not, it automatically pulls it from the Docker Hub, a centralized repository for Docker images.
+
+Creates a Container: Docker creates a container based on the hello-world image. This container is an instance of the image, with its own isolated filesystem and runtime environment.
+
+Starts the Container: The container is started, and it executes the predefined command in the hello-world image, which prints a friendly message.
+
+Understanding the Docker Image and Container Lifecycle
+Docker Image: A Docker image is a lightweight, standalone, and executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, and system tools. Images are immutable, meaning they cannot be modified once created. Changes result in the creation of a new image.
+
+Container Lifecycle: Containers are running instances of Docker images.
+
+They have a lifecycle: create, start, stop, and delete.
+
+Once a container is created from an image, it can be started, stopped, and restarted.
+
+Verifying the Successful Execution
+Let's check if the images is now in our local environment with Example Output:
 
 docker images
 
-Executing this command provides a comprehensive list of all the images stored locally, allowing us to verify the presence of the downloaded image and gather information about its size, version, and other relevant details.
+DockerImage
 
-DockerImages
+If any issue is encounter, ensure that Docker is properly installed and that your user has the necessary permissions to run Docker commands.
 
-Dockerfile
-A Dockerfile is a plaintext configuration file that contains a set of instructions for building a Docker image. It serves as a blueprint for creating a reproducible and consistent environment for our application. Dockerfiles are fundamental to the containerization process, allowing you to define the steps to assemble an image that encapsulates your application and its dependencies.
+This simple "Hello World" example serves as a basic introduction to running containers with Docker. It helps verify that our Docker environment is set up correctly and provides insight into the image and container lifecycle. As we progress in this course, we'll explore more complex scenarios and leverage Docker for building, deploying, and managing diverse applications.
 
-Creating a Dockerfile
-In this dockerfile file, we will be using an nginx image. Nginx is an open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more. It started out as a web server designed for maximum performance and stability. It is recommended we read more on Nginx here. https://www.f5.com/glossary/nginx
+Basic Docker Commands
+Docker Run
+The docker run command is fundamental for executing containers. It creates and starts a container based on a specified image.
 
-To create a Dockerfile, use a text editor of your choice, such as vim or nano. Start by specifying a base image, defining the working directory, copying files, installing dependencies, and configuring the runtime environment.
+docker run hello-world
 
-Here's a simple example of a Dockerfile for a html file: Let's create an image with using a dockerfile. Paste the code snippet below in a file named dockerfile This example assumes you have a basic HTML file named index.html in the same directory as your Dockerfile.
+DockerHelloWorld
 
-SampleCode
+DockerImage
 
-Creating Dockerfile and HTML file
+This example pulls the "nginx" image from Docker Hub (if not available locally) and starts a container using that image.
 
-DockerandHTMLFile
+Docker PS
+The docker ps command displays a list of running containers. This is useful for monitoring active containers and obtaining information such as container IDs, names, and status.
 
-Dockfile
+docker ps
 
-Explanation of the code snippet above
-FROM nginx:latest: Specifies the official NGINX base image from Docker Hub.
+DocketPS DockerPSResult
 
-WORKDIR /usr/share/nginx/html/: Specifies the working directory in the container
-
-COPY index.html /usr/share/nginx/html/: Copies the local index.html file to the NGINX default public directory, which is where NGINX serves static content from.
-
-EXPOSE 80: Informs Docker that the NGINX server will use port 80. This is a documentation feature and doesn't actually publish the port.
-
-CMD: NGINX images come with a default CMD to start the server, so there's no need to specify it explicitly.
-
-HTML file named index.html in the same directory as our dockerfile.
-
-echo "Welcome to Darey.io" >> index.html
-
-EchoWelcometoDarey.io
-
-To build an image from this Dockerfile, navigate to the directory containing the file and run:
-
-docker build -t dockerfile .
-
-DockerBuild
-
-Run Docker Image to check the image build
-
-docker images
-
-dockerimages
-
-To run a container based on the custom NGINX image we created with a dockerfile, run the command
-
-docker run -p 8080:80 dockerfile
-
-DockerRun
-
-Running the command above will create a container that listens on port 8080 using the nginx image we created earlier. So we need to create a new rule in security group of the EC2 instance.
-
-i. On our EC2 instance, click on the security tab
-
-SG
-
-ii. Click on edit inbound rules to add new rules. This will allow incoming traffic to instance associated with the security group. Our aim is to allow incoming traffic on port 8080
-
-EditSG
-
-iii. Click on Add rule to add a new rule
-
-CustomeSG
-
-Let see the list of available containers
+To view all containers, including those that have stopped, add the -a option:
 
 docker ps -a
 
-DockerPS
+Dockerps-a
 
-The image above show our container is not running yet. We can start it with the command below
+DockerPs-aresult
 
-docker start CONTAINER_ID
+Docker Stop
+The docker stop command halts a running container.
 
-DockerStart
+docker stop CONTAINER_ID
 
-DockerStarted
+DockerStop
 
-Now that we have started our container, we can access the content on our web browser with http://publicip_adderss:8080
+Docker Pull
+The docker pull command downloads a Docker image from a registry, such as Docker Hub, to our local machine.
 
-Webpage
+e.g docker pull ubuntu
 
-Pushing Docker Images To Docker Hub
-Let's recall our git project, where we push changes made on our local computer to a remote repository (github) so everyone can track the changes we made and also collaborate on it. Now that we have created a docker images on our own computer, we need to think about how to reuse this image in the future or how do people in other region make use of this image and possibly collaborate on it. This is where Docker Hub comes in. Let's go ahead and push our image to docker hub
+DockerPull
 
-i. Create an account on Docker Hub if you don't have one.
+Docker Push
+The docker push command uploads a local Docker image to a registry, making it available for others to pull.
 
-MyDocker
-
-ii. Create a repository on docker hub
-
-MyRepository
-
-iii. Tag Your Docker Image Before pushing, ensure that your Docker image is appropriately tagged. You typically tag your image with your Docker Hub username and the repository name.
-
-docker tag <your-image-name> <your-dockerhub-username>/<your-repository-name>:<tag>
-
-docker tag dockerfile akinwaledocker/my-nginx
-
-DockerTag
-
-iv. Login to Docker hub
-
-docker login -u <your-docker-hub-username> docker login -u akinwaledocker
-
-Running the command above will prompt you for a password. Authenticate using your docker hub password
-
-DockerLogin
-
-v. Push our image to docker hub
-
-docker push <your-dockerhub-username>/<your-repository-name>:<tag>
-
-docker push akinwaledocker/my-nginx
+docker push
 
 DockerPush
 
-vi. Verify the image is in your docker hub repository
+Ensure you've logged in to Docker Hub using docker login before pushing images.
 
-DockerHubPage
+Docker Images
+The docker images command lists all locally available Docker images.
 
-Now anyone can make use of the image we have on our docker hub repository.
+docker images
 
-Completed Task Dockerize a Basic Web Static Page
-Launch an instance and create a Dockerfile:
+DockerImages DockerImagesresult
 
-Launch an ubuntu EC2 instance and connect to it
-Create a dockerfile, in the file;
-Use the official nginx image as the base.
-Copy your web static page file (e.g. a html file) to the appropriate location within the container.
-Expose the port your web application runs on (e.g., 80).
-Build the Docker Image:
+Docker RMI
+The docker rmi command removes one or more images from the local machine.
 
-Navigate to the directory containing your Dockerfile if not there
-Build the image using the dockerfile
-Run the Docker Container:
+docker rmi
 
-Once the image is built, run a container using the built image
-Verify in Browser:
+DockerRMI
 
-Open a web browser and navigate to http://public-ip:8080 (or the port you specified in the docker run command).
-Confirm that your web application is running successfully.
-Tips:
+These basic Docker commands provide a foundation for working with containers. Understanding how to run, list, stop, pull, push, and manage Docker images is crucial for effective containerization and orchestration. As we delve deeper into Docker, we'll discover additional commands and features that enhance our ability to develop, deploy, and maintain containerized applications.
 
-Ensure your web static page is accessible on the specified port within the container. Use clear and concise names for your Docker image and container. Provide comments in your Dockerfile to explain each step for better understanding.
-
-End.
+END.
