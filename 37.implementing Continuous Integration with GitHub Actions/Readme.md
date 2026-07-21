@@ -50,7 +50,7 @@ Implement matrix builds to test across multiple versions or environments.
 Manage build dependencies efficiently.
 Detailed Steps and Code Explanation:
 Parallel and Matrix Builds:
-
+![](./img/02.%20MatrixBuild.png)
 A matrix build allows you to run jobs across multiple environments and versions simultaneously, increasing efficiency.
 This is useful for testing our application in different versions of runtime environments or dependencies.
 MatrixBuild
@@ -60,7 +60,7 @@ Managing Build Dependencies:
 Handling dependencies and services required for your build process is crucial.
 Utilize caching to reduce the time spent on downloading and installing dependencies repeatedly.
 ManagingBuildDependency
-
+![](./img/03.%20managebuild.png)
 Lesson 3: Integrating Code Quality Checks
 
 Objectives:
@@ -73,12 +73,12 @@ Adding Code Analysis Tools:
 
 Include steps in your workflow to run tools that analyze code quality and adherence to coding standards.
 CodeAnalysis
-
+![](./img/04.%20CodeAnalysis.png)
 Configuring Linters and Static Code Analyzers:
 
 Ensure your repository includes configuration files for these tools, such as .eslintrc for ESLint.
 Eslint
-
+![](./img/05.%20eslint.png)
 Refactored Full CI Workflow (Best Practice)
 Here is a clean and improved workflow combining EVERYTHING:
 
