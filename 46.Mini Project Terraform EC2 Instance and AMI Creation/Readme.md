@@ -1,14 +1,16 @@
-Mini Project - Terraform EC2 Instance and AMI Creation
+# Mini Project - Terraform EC2 Instance and AMI Creation
 In this mini project, we will use Terraform to automate the creation of an EC2 instance on AWS and then create an Amazon Machine Image (AMI) from that instance.
 
 Objectives
 Learn how to write basic Terraform configuration files.
 Learn how to write Terraform script to automate creation of an EC2 instance on AWS.
 Learn how to use Terraform script to automate the creation of an AMI from an already created EC2 instance on AWS.
+
 Prerequisites
 This project requires you to have an AWS Account and the AWS CLI configured to it locally. This setup will be used by the Terraform script you are going to write. From your local command line interface, Terraform will use the configured AWS CLI credential to communicate with your AWS Account when executing the script.
 
 Ensure you have an AWS Account created and functional. You may see a guide here to create a new AWS account.https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html
+
 Ensure you have the AWS CLI installed and configured with the credentials of your AWS Account. You may see a guide here. https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 Ensure you have Terraform installed on your computer. You may see a guide
 Tasks Outline
@@ -22,29 +24,34 @@ Apply [apply]
 Confirm Resources
 Clean up
 Destroy [destroy]
+
 Project Tasks
 Task 1 - Confirm the Prerequisites
 Login into your AWS Account to confirm it is functional.
-AWSAccount
+
+![](./img/01.%20Login%20console.png)
+
 
 Run aws --version on your terminal to confirm the AWS CLI is installed. You should see an output similar to this.
-AWSCLI
+![](./img/02.%20awscli.png)
 
 Run aws configure list to confirm the AWS CLI is configured. You should see an output similar to this.
-AWSconfiglist
+![](./img/03.%20AWSConfiglist.png)
+
 
 Run aws sts get-caller-identity to verify that the AWS CLI can successfully authenticate to your AWS Account. You should see an output similar to this.
 AWSidentity
 
 Run terraform --version to confirm Terraform is installed. You should see an output similar to this.
-ConfirmTerraform
+![](./img/05.%20TerraformVersion.png)
 
 Task 2 - Developing the Terraform Script to create EC2 Instance and AMI from it
-Create a new directory for this Terraform project: mkdir terraform-ec2-ami and cd terraform-ec2-ami.
-MakeDirectory cdtoTerraformDic
+Create a new directory for this Terraform project: mkdir terraform-ec2-ami and cd 
 
 Inside this directory, create a Terraform configuration file: vim main.tf.
-CreateTerraformConfigFile
+
+![](./img/06.%20MakeDirectory.png)
+![](./img/07.%20cdtoterraform.png)
 
 Inside this file, write the script to create an EC2 instance specifying instance type, ami, and tags. Extend this script to include the creation of an AMI from the created EC2 Instance. (See sample below)
 Script
